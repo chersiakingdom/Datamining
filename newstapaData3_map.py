@@ -25,10 +25,10 @@ data = pd.read_csv(url)
 #print(data.head())
 #print(data.columns)
 
-# 행 선택 - 열 선택
+# 행 선택 후 열 선택
 Lat0 = data.iloc[0]['Latitude'] #data.frame 에서 n번째 행 선택, 그 행에서 해당 컬럼 선택
 
-for i in range(len(data.index)):
+for i in range(len(data.index)): #len(data) 해도됨
     folium.Marker(
         location = [data.iloc[i]['Latitude'], data.iloc[i]['Longitude']],
         popup = data.iloc[i]['이름'],
@@ -37,6 +37,8 @@ for i in range(len(data.index)):
 map2.save('C:/downloads/coding_study/crolling/map2.html')
 
 print("END")
+
+# 추후 Folium Library 찾아보기
 
 
 
